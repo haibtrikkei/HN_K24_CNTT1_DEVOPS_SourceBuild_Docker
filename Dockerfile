@@ -2,6 +2,7 @@
 FROM gradle:9.4.1-jdk17-alpine AS build
 WORKDIR /app
 COPY . .
+RUN chmod +x gradlew
 RUN ./gradlew clean bootJar --no-daemon
 
 #stage 2: run
